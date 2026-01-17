@@ -2,7 +2,8 @@ import { Image, TextInput, View } from "react-native";
 import { calculator } from "../../styles/calculator.js"
 
 export default function CalculatorItem() {
-    <View style={[calculator.box]}>
+    return(
+        <View style={[calculator.box]}>
         <View style={[calculator.curency]}>
             <Image source={{
                 uri: 'https://pixelmedia.bg/wp-content/uploads/2016/05/eu-flag-300x197.jpg'
@@ -22,5 +23,5 @@ export default function CalculatorItem() {
         </View>
         <TextInput placeholder="100" keyboardType="number-pad" style={[calculator.input]} />
     </View>
-
+    )
 }
