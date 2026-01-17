@@ -5,7 +5,8 @@ export const styles = StyleSheet.create({
         textAlign: "center",
         alignItems: "center",
         paddingHorizontal: 69,
-        paddingVertical: 50,
+        paddingTop: 50,
+        paddingBottom: 30,
         gap: 5,
     },
     
