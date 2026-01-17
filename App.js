@@ -3,13 +3,22 @@ import { StyleSheet, Text, View } from 'react-native';
 import Header from './components/header/Header';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import Calculator from './components/calculator/Calculator';
+import { LinearGradient } from 'expo-linear-gradient';
 
 export default function App() {
   return (
     <SafeAreaProvider>
-      <SafeAreaView>
-        <Header />
-        <Calculator />
+      <SafeAreaView style={styles.container}>
+        <LinearGradient 
+          colors={['#EAEAFE80', '#DDF6F380']} 
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 1 }}
+          style={styles.gradient}
+        >
+          <Header />
+          <Calculator />
+
+        </LinearGradient>
       </SafeAreaView>
     </SafeAreaProvider>
   );
@@ -18,8 +27,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
+  gradient: {
+    flex: 1,
+  }
 });
