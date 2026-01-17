@@ -4,15 +4,15 @@ export default function Calculator() {
     return (
         <View style={calculator.calculatorContainer}>
             <View style={calculator.item}>
+                <Text style={{
+                    fontSize: 15,
+                    color: "#989898",
+                    paddingBottom: 15,
+                }}>
+                    Currency
+                </Text>
                 <View style={calculator.box}>
-                    <Text style={{
-                        fontSize: 15,
-                        color: "#989898",
-                        paddingBottom: 15,
-                    }}>
-                        Currency
-                    </Text>
-                    <View style={{flexDirection: "row", gap: 10, justifyContent: "center", alignItems: "center"}}>
+                    <View style={calculator.curency}>
                         <Image source={{
                             uri: 'https://pixelmedia.bg/wp-content/uploads/2016/05/eu-flag-300x197.jpg'
                         }}
@@ -28,13 +28,9 @@ export default function Calculator() {
                         }}>
                             EUR
                         </Text>
+                        <TextInput placeholder="Test" style={calculator.input}/>
                     </View>
                 </View>
-                <TextInput placeholder="Test"
-                    style={{
-                        paddingHorizontal: 10,
-                        backgroundColor: "#EFEFEF",
-                    }} />
             </View>
         </View>
     )
@@ -49,13 +45,25 @@ const calculator = StyleSheet.create({
         borderRadius: 10,
     },
     item: {
-        flexDirection: "row",
-        // alignItems: "center",
-        justifyContent: "space-between",
-        gap: 2,
-        flexWrap: "wrap",
+        flexDirection: "column",
+        gap: 10,
     },
     box: {
-        // alignItems: 'center',
-    }
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between",
+        gap: 10,
+    },
+    curency: {
+        flexDirection: "row", 
+        gap: 10, 
+        alignItems: "center"
+    },
+    input: {
+        paddingHorizontal: 20,
+        backgroundColor: "#EFEFEF",
+        flex: 1,
+        height: 45,
+        flexDirection: "row",
+    },
 })
