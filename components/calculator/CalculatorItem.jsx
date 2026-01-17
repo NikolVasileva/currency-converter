@@ -1,4 +1,4 @@
-import { Image, TextInput, View } from "react-native";
+import { Image, TextInput, View, Text } from "react-native";
 import { calculator } from "../../styles/calculator.js"
 
 export default function CalculatorItem() {
