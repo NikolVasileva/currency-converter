@@ -7,19 +7,20 @@ import { LinearGradient } from 'expo-linear-gradient';
 
 export default function App() {
   return (
+
     <SafeAreaProvider>
-      <SafeAreaView style={styles.container}>
-        <LinearGradient 
-          colors={['#EAEAFE80', '#DDF6F380']} 
-          start={{ x: 0, y: 0 }}
-          end={{ x: 1, y: 1 }}
-          style={styles.gradient}
-        >
+      <LinearGradient
+        colors={['#EAEAFE80', '#DDF6F380']}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 1, y: 1 }}
+        style={styles.gradient}
+      >
+        <SafeAreaView style={styles.container}>
           <Header />
           <Calculator />
 
-        </LinearGradient>
-      </SafeAreaView>
+        </SafeAreaView>
+      </LinearGradient>
     </SafeAreaProvider>
   );
 }
