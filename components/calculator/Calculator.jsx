@@ -12,7 +12,7 @@ export default function Calculator() {
                     }}>
                         Currency
                     </Text>
-                    <View style={{flexDirection: "row"}}>
+                    <View style={{flexDirection: "row", gap: 10, justifyContent: "center", alignItems: "center"}}>
                         <Image source={{
                             uri: 'https://pixelmedia.bg/wp-content/uploads/2016/05/eu-flag-300x197.jpg'
                         }}
@@ -43,7 +43,7 @@ export default function Calculator() {
 const calculator = StyleSheet.create({
     calculatorContainer: {
         padding: 16,
-        backgroundColor: '#f2f2f2',
+        backgroundColor: '#ffffff',
         marginHorizontal: 25,
         marginBottom: 20,
         borderRadius: 10,
