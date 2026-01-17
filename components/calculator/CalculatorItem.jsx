@@ -21,7 +21,7 @@ export default function CalculatorItem() {
                 EUR
             </Text>
         </View>
-        <TextInput placeholder="100" keyboardType="number-pad" style={[calculator.input]} />
+        <TextInput placeholder="100" keyboardType="numbers-and-punctuation" style={[calculator.input]} />
     </View>
     )
 }

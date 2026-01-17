@@ -14,6 +14,7 @@ export default function Calculator() {
                     Currency
                 </Text>
                 <CalculatorItem />
+                <CalculatorItem />
             </View>
         </View>
     )
