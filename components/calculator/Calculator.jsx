@@ -35,25 +35,36 @@ export default function Calculator({
         }
     }
 
-    const handleSwap = () => {
-        const newIsSwitch = isSwitch;
-        const newFromAmount = toAmount;
-        const numericValue = parseFloat(toAmount);
+  // Swap to the currencies
+  const handleSwap = () => {
+    const temp = fromAmount;
+    setFromAmount(toAmount);
+    setToAmount(temp);
+
+    if (onSwap) {
+        onSwap(); 
+    } 
+  };
+
+    // const handleSwap = () => {
+    //     const newIsSwitch = isSwitch;
+    //     const newFromAmount = toAmount;
+    //     const numericValue = parseFloat(toAmount);
     
-        setFromAmount(toAmount);
+    //     setFromAmount(toAmount);
     
-        if (isNaN(numericValue)) {
-            setToAmount("");
-        } else {
-            if (newIsSwitch) {
-                setToAmount((numericValue * exchangeRates.BGN).toFixed(2));
-            } else {
-                setToAmount((numericValue * exchangeRates.EUR).toFixed(2));
-            }
-        }
+    //     if (isNaN(numericValue)) {
+    //         setToAmount("");
+    //     } else {
+    //         if (newIsSwitch) {
+    //             setToAmount((numericValue * exchangeRates.BGN).toFixed(2));
+    //         } else {
+    //             setToAmount((numericValue * exchangeRates.EUR).toFixed(2));
+    //         }
+    //     }
     
-        if(onSwap) onSwap();
-    }
+    //     if(onSwap) onSwap();
+    // }
 
     return (
         <View style={[calculator.calculatorContainer]}>
