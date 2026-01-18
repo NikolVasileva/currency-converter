@@ -4,6 +4,7 @@ import Header from './components/header/Header';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import Calculator from './components/calculator/Calculator';
 import { LinearGradient } from 'expo-linear-gradient';
+import Footer from './components/footer/Footer';
 
 export default function App() {
   return (
@@ -16,8 +17,10 @@ export default function App() {
         style={styles.gradient}
       >
         <SafeAreaView style={styles.container}>
+          
           <Header />
           <Calculator />
+          <Footer />
 
         </SafeAreaView>
       </LinearGradient>
