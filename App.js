@@ -13,6 +13,7 @@ export default function App() {
   const handleSwitch = () => {
       setIsSwitch(state => !state);
   }
+
   return (
 
     <SafeAreaProvider>

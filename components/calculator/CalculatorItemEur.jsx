@@ -1,7 +1,10 @@
 import { Image, TextInput, View, Text } from "react-native";
 import { calculator } from "../../styles/calculator.js"
 
-export default function CalculatorItemEur() {
+export default function CalculatorItemEur({
+    value,
+    onChange
+}) {
     return (
 
         <View style={[calculator.box]}>
@@ -22,7 +25,13 @@ export default function CalculatorItemEur() {
                     EUR
                 </Text>
             </View>
-            <TextInput placeholder="100" keyboardType="numbers-and-punctuation" style={[calculator.input]} />
+            <TextInput 
+               placeholder="0" 
+               keyboardType="numbers-and-punctuation" 
+               style={[calculator.input]}
+               value={value}
+               onChangeText={onChange}
+            />
         </View>
     )
 }

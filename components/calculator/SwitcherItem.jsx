@@ -34,7 +34,7 @@ export default function SwitcherItem({
                     <Image source={require("../../assets/switcher.png")}
                         style={{
                             width: 15,
-                            height: 20,
+                            height: 22,
                         }}
                     />
                 </View>

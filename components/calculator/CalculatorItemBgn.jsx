@@ -1,7 +1,10 @@
 import { Image, Text, TextInput, View } from "react-native"
 import { calculator } from "../../styles/calculator.js"
 
-export default function CalculatorItemBgn() {
+export default function CalculatorItemBgn({
+    value,
+    onChange
+}) {
     return (
         <View style={[calculator.box]}>
             <View style={[calculator.curency]}>
@@ -21,7 +24,13 @@ export default function CalculatorItemBgn() {
                     BGN
                 </Text>
             </View>
-            <TextInput placeholder="100" keyboardType="numbers-and-punctuation" style={[calculator.input]} />
+            <TextInput 
+               placeholder="0" 
+               keyboardType="numbers-and-punctuation" 
+               style={[calculator.input]} 
+               value={value}
+               onChangeText={onChange}
+            />
         </View>
     )
 }

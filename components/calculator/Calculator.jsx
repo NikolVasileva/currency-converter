@@ -9,11 +9,51 @@ export default function Calculator({
     isSwitch,
     onSwap
 }) {
-    // const [isSwitch, setIsSwitch] = useState(false);
+    
+    const [fromAmount, setFromAmount] = useState("");
+    const [toAmount, setToAmount] = useState("");
 
-    // const handleSwitch = () => {
-    //     setIsSwitch(state => !state);
-    // }
+    const exchangeRates = {
+        EUR: 1.96,
+        BGN: 0.51,
+    }
+
+    const handleFromAmountToChange = (value) => {
+        setFromAmount(value);
+    
+        const valueToNumber = parseFloat(value);
+    
+        if(isNaN(valueToNumber)) {
+          setToAmount("")
+          return
+        }
+    
+        if(isSwitch) {
+          setToAmount((valueToNumber * exchangeRates.EUR).toFixed(2))
+        } else {
+          setToAmount((valueToNumber * exchangeRates.BGN).toFixed(2))
+        }
+    }
+
+    const handleSwap = () => {
+        const newIsSwitch = isSwitch;
+        const newFromAmount = toAmount;
+        const numericValue = parseFloat(toAmount);
+    
+        setFromAmount(toAmount);
+    
+        if (isNaN(numericValue)) {
+            setToAmount("");
+        } else {
+            if (newIsSwitch) {
+                setToAmount((numericValue * exchangeRates.BGN).toFixed(2));
+            } else {
+                setToAmount((numericValue * exchangeRates.EUR).toFixed(2));
+            }
+        }
+    
+        if(onSwap) onSwap();
+    }
 
     return (
         <View style={[calculator.calculatorContainer]}>
@@ -26,9 +66,17 @@ export default function Calculator({
                     Currency
                 </Text>
 
-                {isSwitch ? <CalculatorItemEur/> : <CalculatorItemBgn />}
+                {isSwitch ? 
+                   <CalculatorItemEur 
+                   value={fromAmount}
+                   onChange={handleFromAmountToChange}
+                   /> : 
+                   <CalculatorItemBgn 
+                   value={fromAmount}
+                   onChange={handleFromAmountToChange}
+                   />}
 
-                <SwitcherItem onPress={onSwap}/>
+                <SwitcherItem onPress={handleSwap}/>
 
                 <Text style={{
                     fontSize: 15,
@@ -38,7 +86,7 @@ export default function Calculator({
                     Converted Amount
                 </Text>
 
-                {isSwitch ? <CalculatorItemBgn/> : <CalculatorItemEur />}
+                {isSwitch ? <CalculatorItemBgn value={toAmount}/> : <CalculatorItemEur value={toAmount}/>}
 
             </View>
         </View>
