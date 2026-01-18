@@ -7,7 +7,23 @@ export default function Calculator() {
     return (
         <View style={[calculator.calculatorContainer]}>
             <View style={[calculator.item]}>
+            <Text style={{
+                fontSize: 15,
+                color: "#989898",
+                paddingBottom: 15,
+            }}>
+                Currency
+            </Text>
+
                 <CalculatorItemEur />
+
+                <Text style={{
+                fontSize: 15,
+                color: "#989898",
+                paddingBottom: 15,
+            }}>
+                Converted Amount
+            </Text>
                 <CalculatorItemBgn />
             </View>
         </View>
