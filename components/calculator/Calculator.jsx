@@ -18,7 +18,14 @@ export default function Calculator() {
 
                 <CalculatorItemEur />
 
-                <SwitcherItem />
+                <View style={{
+                    flex: 1,
+                    justifyContent: "center",
+                    alignItems: "center",
+                    marginVertical: 40,
+                }}>
+                    <SwitcherItem />
+                </View>
 
                 <Text style={{
                     fontSize: 15,
