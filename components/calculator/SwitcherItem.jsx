@@ -9,6 +9,10 @@ export default function SwitcherItem() {
             height: 45,
             alignItems: "center",
             justifyContent: "center",
+            position: "absolute",
+            top: -22,
+            zIndex: 10,
+            overflow: "visible",
         }}>
             <Image source={require("../../assets/switcher.png")}
                 style={{

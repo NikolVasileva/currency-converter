@@ -19,11 +19,20 @@ export default function Calculator() {
                 <CalculatorItemEur />
 
                 <View style={{
-                    flex: 1,
                     justifyContent: "center",
                     alignItems: "center",
                     marginVertical: 40,
+                    position: "relative",
+                    overflow: "visible",
                 }}>
+                    <View style={{
+                        height: 1,
+                        width: "100%",
+                        backgroundColor: "#E7E7EE",
+
+                    }}>
+
+                    </View>
                     <SwitcherItem />
                 </View>
 
