@@ -1,6 +1,12 @@
 import { Text, View } from "react-native";
 
-export default function Footer() {
+export default function Footer({
+    baseCurrency
+}) {
+    const rate = {
+        EUR: "1 EUR = 1.96 BGN",
+        BGN: "1 BGN = 0.51 EUR"
+    }
     return(
         <View style={{
            paddingHorizontal: 28,
@@ -16,7 +22,7 @@ export default function Footer() {
                 fontSize: 18,
                 fontWeight: "bold",
                }}>
-                1 EUR = 1.96 BGN
+                {rate[baseCurrency]}
             </Text>
         </View>
     )

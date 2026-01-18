@@ -5,12 +5,15 @@ import { calculator } from "../../styles/calculator.js"
 import SwitcherItem from "./SwitcherItem.jsx";
 import { useState } from "react";
 
-export default function Calculator() {
-    const [isSwitch, setIsSwitch] = useState(false);
+export default function Calculator({
+    isSwitch,
+    onSwap
+}) {
+    // const [isSwitch, setIsSwitch] = useState(false);
 
-    const handleSwitch = () => {
-        setIsSwitch(state => !state);
-    }
+    // const handleSwitch = () => {
+    //     setIsSwitch(state => !state);
+    // }
 
     return (
         <View style={[calculator.calculatorContainer]}>
@@ -25,7 +28,7 @@ export default function Calculator() {
 
                 {isSwitch ? <CalculatorItemEur/> : <CalculatorItemBgn />}
 
-                <SwitcherItem onPress={handleSwitch}/>
+                <SwitcherItem onPress={onSwap}/>
 
                 <Text style={{
                     fontSize: 15,
@@ -34,7 +37,7 @@ export default function Calculator() {
                 }}>
                     Converted Amount
                 </Text>
-                
+
                 {isSwitch ? <CalculatorItemBgn/> : <CalculatorItemEur />}
 
             </View>

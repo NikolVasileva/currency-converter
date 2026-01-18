@@ -5,8 +5,14 @@ import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import Calculator from './components/calculator/Calculator';
 import { LinearGradient } from 'expo-linear-gradient';
 import Footer from './components/footer/Footer';
+import { useState } from 'react';
 
 export default function App() {
+  const [isSwitch, setIsSwitch] = useState(false);
+
+  const handleSwitch = () => {
+      setIsSwitch(state => !state);
+  }
   return (
 
     <SafeAreaProvider>
@@ -17,10 +23,10 @@ export default function App() {
         style={styles.gradient}
       >
         <SafeAreaView style={styles.container}>
-          
+
           <Header />
-          <Calculator />
-          <Footer />
+          <Calculator isSwitch={isSwitch} onSwap={handleSwitch}/>
+          <Footer baseCurrency={isSwitch ? "EUR" : "BGN"}/>
 
         </SafeAreaView>
       </LinearGradient>
